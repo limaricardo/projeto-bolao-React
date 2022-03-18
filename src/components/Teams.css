@@ -1,0 +1,19 @@
+.teams-container {
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    border: 1px solid black;
+    padding-top: 2px;
+    width: 90%;
+}
+
+.flag {
+    width: 20%;
+    height: 90%;
+    margin-left: 1px;
+}
+
+.country-name {
+    width: 100%;
+    text-align: center;
+}
