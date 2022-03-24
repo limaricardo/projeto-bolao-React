@@ -4,35 +4,66 @@ import Teams from './Teams'
 import Groups from './Groups'
 import TabelaJogos from './TabelaJogos'
 import footballOrg from '../api/footballOrg'
+import Bets from '../components/Bets'
 
 
 
 class App extends React.Component {
 
 
-    // Results = async (term) => {
-    //     const response = await footballOrg.get('')
-    // }
+    renderGroup = () => {
+        return this.dataGroups.map((data) =>{
+            return (
+                <Groups id={data.id} groupLetter={data.groupLetter} />
+            )
+        })
+    }
 
 
+    dataGroups = [{
+        id: 'a',
+        groupLetter: 'A'
+    },
+    {
+        id: 'b',
+        groupLetter: 'B'
+    },
+    {
+        id: 'c',
+        groupLetter: 'C'
+    },
+    {
+        id: 'db',
+        groupLetter: 'D'
+    },
+    {
+        id: 'e',
+        groupLetter: 'E'
+    },
+    {
+        id: 'f',
+        groupLetter: 'F'
+    },
+    {
+        id: 'g',
+        groupLetter: 'G'
+    },
+    {
+        id: 'h',
+        groupLetter: 'H'
+    },]
 
     render(){
         return (
-    
+            
             <div className="appMain">
-                <header className='header-grupos'>
+                <Bets />
+                {/* <header className='header-grupos'>
                     <h1>Grupos Copa</h1>
                 </header>
                 <div className="groups-container">
-                    <Groups id="a" letraGrupo="A" />
-                    <Groups id="b" letraGrupo="B" />
-                    <Groups id="c" letraGrupo="C" />
-                    <Groups id="d" letraGrupo="D" />
-                    <Groups id="e" letraGrupo="E" />
-                    <Groups id="f" letraGrupo="F" />
-                    <Groups id="g" letraGrupo="G"/>
-                    <Groups id="h" letraGrupo="H"/>
-                </div>
+                    {this.renderGroup()}
+                </div> */}
             </div>
             )
     }

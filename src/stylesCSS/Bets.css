@@ -1,0 +1,15 @@
+.bet-container {
+    display: flex;
+    align-items: center;
+}
+
+.bet-container p {
+    text-align: center;
+    height: 100%;
+    margin: 0px 5px;
+}
+
+.bet-container input {
+    width: 50px;
+    margin: 0px 5px;
+}
