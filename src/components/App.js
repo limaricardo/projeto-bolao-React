@@ -5,11 +5,20 @@ import Groups from './Groups'
 import TabelaJogos from './TabelaJogos'
 import footballOrg from '../api/footballOrg'
 import Bets from '../components/Bets'
+import MatchesList from './MatchesList'
 
 
 
 class App extends React.Component {
 
+    state = { rodada1: [] } 
+
+    worldCupMatches = async () => {
+        const response = await footballOrg.get('/competitions/WC/matches?matchday=1')
+        console.log(response)
+    }
+
+    
 
     renderGroup = () => {
         return this.dataGroups.map((data) =>{
@@ -17,6 +26,10 @@ class App extends React.Component {
                 <Groups id={data.id} groupLetter={data.groupLetter} />
             )
         })
+    }
+
+    onRodadaSelect = (matches) => {
+        this.setState({ })
     }
 
 
@@ -33,7 +46,7 @@ class App extends React.Component {
         groupLetter: 'C'
     },
     {
-        id: 'db',
+        id: 'd',
         groupLetter: 'D'
     },
     {
@@ -55,9 +68,9 @@ class App extends React.Component {
 
     render(){
         return (
-            
             <div className="appMain">
                 <Bets />
+                <MatchesList matches={this.state.matches} />
                 {/* <header className='header-grupos'>
                     <h1>Grupos Copa</h1>
                 </header>
