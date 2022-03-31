@@ -11,13 +11,17 @@ import MatchesList from './MatchesList'
 
 class App extends React.Component {
 
-    state = { rodada1: [] } 
+    state = { matches: [] } 
 
     worldCupMatches = async () => {
-        const response = await footballOrg.get('/competitions/WC/matches?matchday=1')
+        const response = await footballOrg.get('/competitions/WC/matches')
         console.log(response)
+        this.setState({ matches: response.data.matches })
     }
 
+    componentDidMount() {
+        this.worldCupMatches()
+    }
     
 
     renderGroup = () => {
@@ -28,8 +32,8 @@ class App extends React.Component {
         })
     }
 
-    onRodadaSelect = (matches) => {
-        this.setState({ })
+    onRodadaSelect = (match) => {
+        this.setState({ selectedRodada: match })
     }
 
 
@@ -70,7 +74,7 @@ class App extends React.Component {
         return (
             <div className="appMain">
                 <Bets />
-                <MatchesList matches={this.state.matches} />
+                <MatchesList matches={this.state.matches} onRodadaSelect={this.onRodadaSelect} />
                 {/* <header className='header-grupos'>
                     <h1>Grupos Copa</h1>
                 </header>
