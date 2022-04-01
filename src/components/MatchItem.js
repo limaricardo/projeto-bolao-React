@@ -1,10 +1,10 @@
 import React from "react";
 
-const MatchItem = ({ match, onRodadaSelect }) => {
+const MatchItem = ({ match }) => {
 
     
     return (
-        <div>MatchItem</div>
+        <div>{match.id}</div>
     )
 }
 

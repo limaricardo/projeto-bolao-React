@@ -2,7 +2,13 @@ import React from "react";
 import '../stylesCSS/Bets.css'
 
 
-const Bets = () => {
+
+const Bets = ({ setSelectedValue} ) => {
+
+    const onSelectChange = (event) => {
+        setSelectedValue(event.target.value)
+    }
+
     return(
         <div>
             <header className='header-grupos'>
@@ -11,14 +17,13 @@ const Bets = () => {
             <div className="filter-container">
                 <h3>Filtro</h3>
                 <div>
-                    <label for="rodadas">Selecione a rodada</label>
-                    <select className="rodada-dropdown" name="rodadas">
+                    <label htmlFor="rodadas">Selecione a rodada</label>
+                    <select name="rodadas" onChange={onSelectChange} className="rodada-dropdown">
                         <option disabled>Rodadas</option>
-                        <option value="rodada1">Rodada 1</option>
-                        <option value="rodada1">Rodada 2</option>
-                        <option value="rodada1">Rodada 3</option>
+                        <option value="1">Rodada 1</option>
+                        <option value="2">Rodada 2</option>
+                        <option value="3">Rodada 3</option>
                     </select>
-                    <button className="rodada-button">Filtrar</button>
                 </div>
             </div>
             <div className="bet-container">

@@ -6,38 +6,35 @@ import TabelaJogos from './TabelaJogos'
 import footballOrg from '../api/footballOrg'
 import Bets from '../components/Bets'
 import MatchesList from './MatchesList'
+import { useState, useEffect } from "react";
 
 
 
-class App extends React.Component {
+const App = () =>{
 
-    state = { matches: [] } 
+    const [matches, setMatches] = useState([])
+    const [selectedValue, setSelectedValue] = useState(1)
 
-    worldCupMatches = async () => {
+    const worldCupMatches = async () => {
         const response = await footballOrg.get('/competitions/WC/matches')
-        console.log(response)
-        this.setState({ matches: response.data.matches })
-    }
+        setMatches(response.data.matches)
+    };
 
-    componentDidMount() {
-        this.worldCupMatches()
-    }
+    useEffect(() => {
+        worldCupMatches()
+    }, []);
     
 
-    renderGroup = () => {
-        return this.dataGroups.map((data) =>{
+    const renderGroup = () => {
+        return dataGroups.map((data) =>{
             return (
                 <Groups id={data.id} groupLetter={data.groupLetter} />
             )
         })
     }
 
-    onRodadaSelect = (match) => {
-        this.setState({ selectedRodada: match })
-    }
 
-
-    dataGroups = [{
+    const dataGroups = [{
         id: 'a',
         groupLetter: 'A'
     },
@@ -70,20 +67,20 @@ class App extends React.Component {
         groupLetter: 'H'
     },]
 
-    render(){
-        return (
-            <div className="appMain">
-                <Bets />
-                <MatchesList matches={this.state.matches} onRodadaSelect={this.onRodadaSelect} />
-                {/* <header className='header-grupos'>
-                    <h1>Grupos Copa</h1>
-                </header>
-                <div className="groups-container">
-                    {this.renderGroup()}
-                </div> */}
-            </div>
-            )
-    }
+    
+    return (
+        <div className="appMain">
+            <Bets setSelectedValue={setSelectedValue} />
+            <MatchesList selectedValue={selectedValue} matches={matches} />
+            {/* <header className='header-grupos'>
+                <h1>Grupos Copa</h1>
+            </header>
+            <div className="groups-container">
+                {this.renderGroup()}
+            </div> */}
+        </div>
+        )
+    
 }
 
 export default App
