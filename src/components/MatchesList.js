@@ -1,14 +1,14 @@
 import React from "react";
 import MatchItem from "./MatchItem";
+import '../stylesCSS/Bets.css'
 
 const MatchesList = ({ matches, selectedValue }) => {
-    console.log(selectedValue)
     const renderedList = matches.filter((match) =>{
         return match.matchday == selectedValue
     }).map((match) => {
         return <MatchItem key={match.id} match={match} />
     }) 
-    return <div>{renderedList}</div>
+    return <div className="match-container">{renderedList}</div>
 }
 
 export default MatchesList

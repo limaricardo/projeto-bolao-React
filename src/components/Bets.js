@@ -25,16 +25,7 @@ const Bets = ({ setSelectedValue} ) => {
                         <option value="3">Rodada 3</option>
                     </select>
                 </div>
-            </div>
-            <div className="bet-container">
-                <p>Brazil</p>
-                <img alt="" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" style={{width: '40px'}} />
-                <input></input>
-                <p>X</p>
-                <input></input>
-                <img alt="" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg" style={{width: '40px'}} />
-                <p>Argentina</p>
-            </div>
+            </div>        
         </div>
     )
 }

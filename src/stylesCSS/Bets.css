@@ -1,6 +1,13 @@
 .bet-container {
     display: flex;
     align-items: center;
+    width: 480px;
+}
+
+.match-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .bet-container p {
@@ -12,4 +19,8 @@
 .bet-container input {
     width: 50px;
     margin: 0px 5px;
+}
+
+.nation-name {
+    width: 100px;
 }

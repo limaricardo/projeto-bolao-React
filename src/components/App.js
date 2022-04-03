@@ -18,6 +18,7 @@ const App = () =>{
     const worldCupMatches = async () => {
         const response = await footballOrg.get('/competitions/WC/matches')
         setMatches(response.data.matches)
+        console.log(response)
     };
 
     useEffect(() => {
