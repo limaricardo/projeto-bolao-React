@@ -1,0 +1,56 @@
+.create-container {
+    border: 1px solid black;
+    width: 60%;
+    position: absolute;
+    top: 200px;
+    left: 200px;
+}
+
+form {
+    width: 100%;
+}
+
+.form-create {
+    margin: auto;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 20px 20px 20px;
+}
+
+form h1 {
+    text-align: center;
+}
+
+.form-create h5 {
+    margin: 2px;
+}
+
+form input {
+    border: 1px solid lightgray;
+}
+
+
+.wrapper{
+    border: 1px solid grey;
+  }
+  
+.toolbar{
+    background-color: rgb(238, 238, 238);
+    overflow: hidden;
+}
+
+.editor{
+    background-color: rgb(255, 255, 255);
+    height: 150px;
+}
+
+.create-button {
+    margin-top: 30px;
+    background-color: black;
+    color: white;
+}

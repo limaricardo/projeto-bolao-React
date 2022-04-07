@@ -7,6 +7,7 @@ import footballOrg from '../api/footballOrg'
 import Bets from '../components/Bets'
 import MatchesList from './MatchesList'
 import { useState, useEffect } from "react";
+import CreateBolao from './CreateBolao'
 
 
 
@@ -18,7 +19,6 @@ const App = () =>{
     const worldCupMatches = async () => {
         const response = await footballOrg.get('/competitions/WC/matches')
         setMatches(response.data.matches)
-        console.log(response)
     };
 
     useEffect(() => {
@@ -71,6 +71,7 @@ const App = () =>{
     
     return (
         <div className="appMain">
+            {/* <CreateBolao /> */}
             <Bets setSelectedValue={setSelectedValue} />
             <MatchesList selectedValue={selectedValue} matches={matches} />
             {/* <header className='header-grupos'>
