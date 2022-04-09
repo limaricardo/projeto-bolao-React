@@ -3,10 +3,15 @@ import React from 'react'
 import Teams from './Teams'
 
 
-const Groups = (props) => {
+const Groups = ({ groupLetter, setGroupClicked } ) => {
+
+    const onGroupClick = ()=> {
+        setGroupClicked(`GROUP_${groupLetter}`)
+    }
+
     return (
-        <div className='group-container'>
-            <h2 className='group-header'>Grupo {props.groupLetter}</h2>
+        <div className='group-container' onClick={onGroupClick}>
+            <h2 className='group-header'>Grupo {groupLetter}</h2>
             <div className='group-teams'>
                 <Teams teamName="Brasil" />
                 <Teams teamName="Venezuela" />

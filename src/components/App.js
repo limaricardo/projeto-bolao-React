@@ -15,6 +15,7 @@ const App = () =>{
 
     const [matches, setMatches] = useState([])
     const [selectedValue, setSelectedValue] = useState(1)
+    const [groupClicked, setGroupClicked] = useState('GROUP_A')
 
     const worldCupMatches = async () => {
         const response = await footballOrg.get('/competitions/WC/matches')
@@ -29,11 +30,10 @@ const App = () =>{
     const renderGroup = () => {
         return dataGroups.map((data) =>{
             return (
-                <Groups id={data.id} groupLetter={data.groupLetter} />
+                <Groups id={data.id} groupLetter={data.groupLetter} setGroupClicked={setGroupClicked} />
             )
         })
     }
-
 
     const dataGroups = [{
         id: 'a',
@@ -71,14 +71,18 @@ const App = () =>{
     
     return (
         <div className="appMain">
+            <div className='Tabela-Jogos'>
+                <h1>Grupo {groupClicked[6]}</h1>
+                <TabelaJogos matches={matches} groupClicked={groupClicked} />
+            </div>
             {/* <CreateBolao /> */}
-            <Bets setSelectedValue={setSelectedValue} />
-            <MatchesList selectedValue={selectedValue} matches={matches} />
+            {/* <Bets setSelectedValue={setSelectedValue} />
+            <MatchesList selectedValue={selectedValue} matches={matches} /> */}
             {/* <header className='header-grupos'>
                 <h1>Grupos Copa</h1>
             </header>
             <div className="groups-container">
-                {this.renderGroup()}
+                {renderGroup()}
             </div> */}
         </div>
         )
