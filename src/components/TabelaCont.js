@@ -20,11 +20,11 @@ const TabelaCont = ({ match }) => {
                         <td>{match.matchday}</td>
                         <td>20/04/2022</td>
                         <td>12:00</td>
-                        <td>{match.homeTeam.name}</td>
+                        <td>{match.homeTeam?.name}</td>
                         <td>0</td>
                         <td>x</td>
                         <td>0</td>
-                        <td>{match.awayTeam.name}</td>
+                        <td>{match.awayTeam?.name}</td>
                     </tr>
                 </tbody>  
             </table>

@@ -12,7 +12,7 @@ const MatchItem = ({ match }) => {
     var values = JSON.parse(localStorage.getItem('values') || '[]')
     var results = {
       matchId: match.id,
-      rodada: match.matchday,
+      rodada: match.matchDay,
       value1: value,
       value2: value2
     }
@@ -33,7 +33,7 @@ const MatchItem = ({ match }) => {
 
   return (
     <div className="bet-container ui segment">
-      <p className="nation-name">{match.awayTeam.name}</p>
+      <p className="nation-name">{match.awayTeam?.name}</p>
       <img
         alt=""
         src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
@@ -55,7 +55,7 @@ const MatchItem = ({ match }) => {
         src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
         style={{ width: "40px" }}
       />
-      <p>{match.homeTeam.name}</p>
+      <p>{match.homeTeam?.name}</p>
     </div>
   );
 };

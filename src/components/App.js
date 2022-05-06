@@ -3,6 +3,7 @@ import Nav from './Nav'
 import Teams from './Teams'
 import Groups from './Groups'
 import TabelaJogos from './TabelaJogos'
+import bolaoApi from '../api/bolaoApi'
 import footballOrg from '../api/footballOrg'
 import Bets from '../components/Bets'
 import MatchesList from './MatchesList'
@@ -18,8 +19,9 @@ const App = () =>{
     const [groupClicked, setGroupClicked] = useState('GROUP_A')
 
     const worldCupMatches = async () => {
-        const response = await footballOrg.get('/competitions/WC/matches')
-        setMatches(response.data.matches)
+        const response = await bolaoApi.get('/match');
+        setMatches(response.data)
+        console.log(response)
     };
 
     useEffect(() => {
@@ -71,13 +73,13 @@ const App = () =>{
     
     return (
         <div className="appMain">
-            <div className='Tabela-Jogos'>
+            {/* <div className='Tabela-Jogos'>
                 <h1>Grupo {groupClicked[6]}</h1>
                 <TabelaJogos matches={matches} groupClicked={groupClicked} />
-            </div>
+            </div> */}
             {/* <CreateBolao /> */}
-            {/* <Bets setSelectedValue={setSelectedValue} />
-            <MatchesList selectedValue={selectedValue} matches={matches} /> */}
+            <Bets setSelectedValue={setSelectedValue} />
+            <MatchesList selectedValue={selectedValue} matches={matches} />
             {/* <header className='header-grupos'>
                 <h1>Grupos Copa</h1>
             </header>
