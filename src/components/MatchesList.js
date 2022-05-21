@@ -4,7 +4,7 @@ import '../stylesCSS/Bets.css'
 
 const MatchesList = ({ matches, selectedValue }) => {
     const renderedList = matches.filter((match) =>{
-        return match.matchDay == selectedValue
+        return match.matchDay === selectedValue
     }).map((match) => {
         return <MatchItem key={match.id} match={match} />
     }) 
