@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
     
     return (
         <div>
-            <nav class="nav">
-                <a class="nav-link" href="#">Grupos</a>
-                <a class="nav-link active" href="#">Classificação fase de grupos</a>
-                <a class="nav-link" href="#">Classificação fases finais</a>
-                <a class="nav-link" href="#">Apostas fase de grupos</a>
-                <a class="nav-link" href="#">Apostas mata-mata</a>
-                
+            <nav className="nav">
+                <Link to="/" className="nav-link active">Grupos</Link>
+                <Link to="/create-bolao" className="nav-link">Criar Bolão</Link>
+                <Link to="/bets" className="nav-link">Apostas</Link>
+                <Link to="/register" className="nav-link">Registrar</Link>
+                <Link to="/tabela-jogos" className="nav-link">Tabela Jogos</Link>
             </nav>
         </div>
     )
@@ -18,16 +18,3 @@ const Nav = () => {
 }
 
 export default Nav
-
-/* Apostas fase de grupo
-*Componente de Grupos
- - Grupos A - H 
-
-Classificação fase de grupos
-Banco de dados
-Apostas fases finais
-Banco de dados Fases finais
-Classificação fase final
-
-
-*/

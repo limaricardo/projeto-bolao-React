@@ -1,4 +1,3 @@
-import { SelectionState } from "draft-js";
 import React, { useState } from "react";
 
 const Input = ({ htmlFor, type, id, name, children }) => {

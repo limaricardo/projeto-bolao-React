@@ -3,29 +3,6 @@
     align-items: center;
 }
 
-.groups-container {
-    display: grid;
-    grid-template-areas: "a b c d" "e f g h";
-    justify-items: center;
-    margin-top: 100px;
-}
-
-#a {
-    grid-area: a;
-}
-
-#b {
-    grid-area: b;
-}
-
-#c {
-    grid-area: c;
-}
-
-#d {
-    grid-area: d;
-}
-
 .header-grupos {
     text-align: center;
     margin-top: 50px;
@@ -39,7 +16,6 @@
     border: 1px solid black;
     width: 200px;
     height: 250px;
-    margin: 10px;
 }
 
 .group-header {
