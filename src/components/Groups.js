@@ -1,11 +1,15 @@
 import "../stylesCSS/Groups.css";
 import React from "react";
 import Teams from "./Teams";
+import { useNavigate } from 'react-router-dom';
 
-const Groups = ({ groupLetter, setGroupClicked }) => {
+const Groups = ({ groupLetter, setGroupClicked, matches }) => {
+
+  const navigate = useNavigate();
+
   const onGroupClick = () => {
-    console.log(setGroupClicked(`GROUP_${groupLetter}`));
     setGroupClicked(`GROUP_${groupLetter}`);
+    navigate('/tabela-jogos')
   };
 
   return (

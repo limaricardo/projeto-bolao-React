@@ -32,7 +32,7 @@ const App = () => {
       <BrowserRouter>
         <Nav />
         <Routes>
-          <Route path="/" exact element={<RenderedGroups setGroupClicked={setGroupClicked} />} />
+          <Route path="/" exact element={<RenderedGroups setGroupClicked={setGroupClicked} matches={matches} />} />
           <Route path="/tabela-jogos" element={<TabelaJogos matches={matches} groupClicked={groupClicked} setGroupClicked={setGroupClicked} />} />
           <Route path="/create-bolao" element={<CreateBolao />} />
           <Route path="/bets" element={<Bets matches={matches} />} />

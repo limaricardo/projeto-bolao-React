@@ -2,7 +2,8 @@ import React from "react";
 import Groups from "./Groups";
 import "../stylesCSS/RenderedGroups.css";
 
-const RenderedGroups = ({ setGroupClicked }) => {
+const RenderedGroups = ({ setGroupClicked, matches }) => {
+  
   const dataGroups = [
     {
       id: "a",
@@ -46,6 +47,7 @@ const RenderedGroups = ({ setGroupClicked }) => {
           id={data.id}
           groupLetter={data.groupLetter}
           setGroupClicked={setGroupClicked}
+          matches={matches}
         />
       );
     });
