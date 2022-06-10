@@ -5,6 +5,7 @@ import "../stylesCSS/Bets.css";
 const MatchesList = ({ matches, selectedValue }) => {
   const renderedList = matches
     .filter((match) => {
+      console.log(match)
       return match.matchDay == selectedValue;
     })
     .map((match) => {

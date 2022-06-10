@@ -1,0 +1,33 @@
+const IMAGES = {
+  Argentina: require('./Argentina.svg').default,
+  Belgium: require('./Belgium.svg').default,
+  Brazil: require('./Brazil.svg').default,
+  Cameroon: require('./Cameroon.svg').default,
+  Canada: require('./Canada.svg').default,
+  Croatia: require('./Croatia.svg').default,
+  Denmark: require('./Denmark.svg').default,
+  Ecuador: require('./Ecuador.svg').default,
+  England: require('./England.svg').default,
+  France: require('./France.svg').default,
+  Germany: require('./Germany.svg').default,
+  Ghana: require('./Ghana.svg').default,
+  Iran: require('./Iran.svg').default,
+  Japan: require('./Japan.svg').default,
+  Mexico: require('./Mexico.svg').default,
+  Morocco: require('./Morocco.svg').default,
+  Netherlands: require('./Netherlands.svg').default,
+  Poland: require('./Poland.svg').default,
+  Portugal: require('./Portugal.svg').default,
+  Qatar: require('./Qatar.svg').default,
+  "Saudi Arabia": require('./Saudi Arabia.svg').default,
+  Senegal: require('./Senegal.svg').default,
+  Serbia: require('./Serbia.svg').default,
+  "South Korea": require('./South Korea.svg').default,
+  Spain: require('./Spain.svg').default,
+  Switzerland: require('./Switzerland.svg').default,
+  Tunisia: require('./Tunisia.svg').default,
+  "United States": require('./United States.svg').default,
+  Uruguay: require('./Uruguay.svg').default
+}
+
+export default IMAGES;

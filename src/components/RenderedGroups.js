@@ -39,6 +39,7 @@ const RenderedGroups = ({ setGroupClicked, matches }) => {
     },
   ];
 
+ 
   const RenderGroup = () => {
     return dataGroups.map((data) => {
       return (

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Register from "./Register";
@@ -16,16 +16,20 @@ const App = () => {
   const [matches, setMatches] = useState([]);
   const [groupClicked, setGroupClicked] = useState("GROUP_A");
 
+  useEffect(() => {
+    return worldCupMatches();
+  }, []);
+
   const worldCupMatches = async () => {
     const response = await bolaoApi.get("/match");
     setMatches(response.data);
     console.log(response);
   };
 
-  useEffect(() => {
-    worldCupMatches();
-  }, []);
-
+  if(matches.length == 0) {
+    return <h1>Loading</h1>
+  }
+  
   return (
     <div className="appMain">
       

@@ -1,16 +1,20 @@
 import React, { useState } from "react";
 import "../stylesCSS/Bets.css";
+import IMAGES from '../images'
 
 const MatchItem = ({ match }) => {
   const [value, setValue] = useState("");
   const [value2, setValue2] = useState("");
 
+  const awayTeam = match.awayTeam?.name
+  const homeTeam = match.homeTeam?.name
+
   return (
     <div className="bet-container ui segment">
-      <p className="nation-name">{match.awayTeam?.name}</p>
+      <p className="nation-name">{awayTeam}</p>
       <img
         alt=""
-        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+        src={IMAGES[awayTeam]}
         style={{ width: "40px" }}
       />
       <input
@@ -26,10 +30,10 @@ const MatchItem = ({ match }) => {
       />
       <img
         alt=""
-        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+        src={IMAGES[homeTeam]}
         style={{ width: "40px" }}
       />
-      <p>{match.homeTeam?.name}</p>
+      <p>{homeTeam}</p>
     </div>
   );
 };

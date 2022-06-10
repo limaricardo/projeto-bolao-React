@@ -13,13 +13,10 @@ const Groups = ({ groupLetter, setGroupClicked, matches }) => {
   };
 
   return (
-    <div className="group-container" onClick={onGroupClick}>
-      <h2 className="group-header">Grupo {groupLetter}</h2>
+    <div className="group-container">
+      <h2 className="group-header" onClick={onGroupClick}>Grupo {groupLetter}</h2>
       <div className="group-teams">
-        <Teams teamName="Brasil" />
-        <Teams teamName="Venezuela" />
-        <Teams teamName="Uruguai" />
-        <Teams teamName="Argentina" />
+        <Teams matches={matches} groupLetter={groupLetter} />
       </div>
     </div>
   );
