@@ -1,6 +1,6 @@
 import React from "react";
-import Input from "./Input";
-import Button from "./Button";
+import Input from "../components/Input";
+import Button from "../components/Button";
 
 const Register = () => {
   return (

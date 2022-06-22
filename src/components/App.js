@@ -2,12 +2,12 @@ import React from "react";
 import { useState, useEffect} from "react";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Register from "./Register";
+import Register from "../pages/Register";
 import Nav from "./Nav";
 import TabelaJogos from "./TabelaJogos";
 import Bets from "../components/Bets";
-import CreateBolao from "./CreateBolao";
-import RenderedGroups from "./RenderedGroups";
+import CreateBolao from "../pages/CreateBolao";
+import RenderedGroups from "../pages/RenderedGroups";
 
 import bolaoApi from "../api/bolaoApi";
 

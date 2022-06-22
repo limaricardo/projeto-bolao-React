@@ -1,5 +1,5 @@
 import React from "react";
-import Groups from "./Groups";
+import Groups from "../components/Groups";
 import "../stylesCSS/RenderedGroups.css";
 
 const RenderedGroups = ({ setGroupClicked, matches }) => {
