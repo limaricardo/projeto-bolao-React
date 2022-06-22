@@ -1,3 +1,6 @@
+# Projeto Bolão 
+Projeto criado do zero em Node.js e ReactJS para colocar conhecimentos adquiridos em prática. Conforme novos conhecimentos são adquiridos, o app é refatorado e os vídeos podem ser acompanhados pelo YouTube. Link: https://www.youtube.com/channel/UCk_4NkFc5jj5qCoxAskRahg .
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
